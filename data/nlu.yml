@@ -1,0 +1,216 @@
+version: "3.1"
+
+nlu:
+- intent: start
+  examples: |
+    - /start
+    - start
+    - begin
+    - let's start
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - greetings
+    - good morning
+    - good evening
+    - hey there
+    - howdy
+    - what's up
+    - good afternoon
+    - nice to meet you
+    - pleasure to meet you
+    - how are you doing?
+    - how's it going?
+    - hi there
+    - hello there
+    - yo
+    - hiya
+    - good day
+    - hi, how can you help me?
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you around
+    - see you later
+    - good night
+    - bye bye
+    - have a good day
+    - have a nice day
+    - take care
+    - farewell
+    - catch you later
+    - until next time
+    - see you soon
+    - I'm off
+    - gotta go
+    - I need to leave now
+    - talk to you later
+    - it was nice talking to you
+    - I'm heading out
+    - thanks, goodbye
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - are you real?
+    - are you artificial intelligence?
+    - are you AI?
+    - what are you?
+    - who am I talking to?
+    - are you a machine?
+    - are you a computer program?
+    - is this a chatbot?
+    - am I chatting with a real person?
+    - is there a human behind this?
+    - are you automated?
+    - are you a virtual assistant?
+    - are you human or machine?
+    - is this an AI conversation?
+    - are you a live agent?
+    - is this a pre-programmed response system?
+
+- intent: book_room
+  examples: |
+    - I'd like to book a room
+    - Can I book a room?
+    - I want to make a reservation
+    - Book a room please
+    - I need to reserve a room
+    - How can I book accommodation?
+    - Is it possible to make a room reservation?
+    - I'm looking to book a stay
+    - Can you help me book a room?
+    - I want to arrange lodging
+    - I'd like to reserve accommodation
+    - How do I go about booking a room?
+    - I'm interested in making a room reservation
+    - Can you assist me with booking a room?
+    - I need to secure a room for my stay
+    - I want to book a place to stay
+    - Help me book a room, please
+    - I'd like to make arrangements for a room
+    - Can you book me a room?
+    - I'm calling to book a room
+
+- intent: provide_name
+  examples: |
+    - My name is [Collins Onyemaobi](name)
+    - [Jane Smith](name)
+    - It's [Michael Johnson](name)
+    - I'm [Sarah Williams](name)
+    - The name's [John Doe](name)
+    - You can call me [Emily Brown](name)
+    - My name's [David Lee](name)
+    - I go by [Rachel Green](name)
+    - [Robert White](name) here
+    - This is [Jennifer Taylor](name)
+    - [William Davis](name) speaking
+    - Please call me [Emma Wilson](name)
+    - It's [Thomas Anderson](name)
+    - My full name is [Elizabeth Martinez](name)
+    - I am [Christopher Lee](name)
+    - The name is [Olivia Johnson](name)
+    - You're speaking with [Daniel Thomas](name)
+    - [Sophia Garcia](name) at your service
+    - I'm known as [Matthew Robinson](name)
+    - [Isabella Rodriguez](name) is my name
+
+- intent: guest_count
+  examples: |
+    - [Two](guest_count) guests
+    - [One](guest_count) person
+    - [Three](guest_count) people
+    - [2](guest_count) guests
+    - [1](guest_count) person
+    - [3](guest_count) people
+    - [Two](guest_count)
+    - [One](guest_count)
+    - [Three](guest_count)
+    - [2](guest_count)
+    - [1](guest_count)
+    - [3](guest_count)
+    - [Four](guest_count) guests
+    - [4](guest_count) people
+    - [Five](guest_count) of us
+    - [5](guest_count) in total
+    - Just [me](guest_count)
+    - [Six](guest_count) guests in our party
+    - We are a group of [7](guest_count)
+    - [Eight](guest_count) people in total
+
+- intent: provide_stay_dates
+  examples: |
+    - From [July 1](check_in) to [July 5](check_out)
+    - I want to stay from [Aug 15, 2024](check_in) to [Aug 20, 2024](check_out)
+    - Checking in on [September 10](check_in) and leaving [September 15](check_out)
+    - [Tomorrow](check_in) until [next week](check_out)
+    - We'll arrive on [Oct 3](check_in) and depart on [October 10](check_out)
+    - My stay will be from [December 24](check_in) to [Dec 26](check_out)
+    - I need a room starting [this Friday](check_in) for [5 nights](duration)
+    - We plan to check in [next Monday](check_in) and stay until [Thursday](check_out)
+    - Booking for [3 nights](duration) beginning [November 15](check_in)
+    - From [Jan 1](check_in) to [Jan 5](check_out)
+    - I'd like to book from [June 1](check_in) through [Jun 7](check_out)
+    - Our vacation is from [Jul 20](check_in) to [Jul 27](check_out)
+    - We need a room [tonight](check_in) for [2 nights](duration)
+    - Planning to stay from [Feb 1](check_in) to [February 5](check_out)
+    - Check-in on [Mar 15, 2024](check_in) and check-out on [March 20, 2024](check_out)
+    - We'll be there from [April 1](check_in) until [Apr 8](check_out)
+    - I want to book for [a week](duration) starting [May 1](check_in)
+    - Our stay will be from [September 5](check_in) to [Sep 12](check_out)
+    - Arriving on [November 22, 2023](check_in) and leaving on [November 26, 2023](check_out)
+    - We need a room from [this Saturday](check_in) for [4 nights](duration)
+
+- intent: breakfast_preference
+  examples: |
+    - [Yes](breakfast), please
+    - [No](breakfast) breakfast
+    - I'd like breakfast [included](breakfast)
+    - [Without](breakfast) breakfast
+    - [Yes](breakfast), I'd like breakfast
+    - [No](breakfast) thanks, no breakfast needed
+    - [Include](breakfast) breakfast please
+    - I'll [skip](breakfast) breakfast
+    - [Yes](breakfast), breakfast would be great
+    - [No](breakfast) need for breakfast
+    - Please [add](breakfast) breakfast to my booking
+    - I'll [pass](breakfast) on breakfast
+    - [Yes](breakfast), I want the breakfast option
+    - [Exclude](breakfast) breakfast from my stay
+    - [Include](breakfast) the morning meal please
+    - I don't need [any](breakfast) breakfast
+    - [Yes](breakfast), breakfast is necessary
+    - [No](breakfast) breakfast required
+    - [Add](breakfast) the breakfast package
+    - I'll [handle](breakfast) my own breakfast
+
+- intent: payment_method
+  examples: |
+    - [Credit Card](payment_method)
+    - [Cash](payment_method)
+    - I'll pay by [debit card](payment_method)
+    - [Visa](payment_method)
+    - [MasterCard](payment_method)
+    - I'd like to use [American Express](payment_method)
+    - [PayPal](payment_method) please
+    - Can I pay with [Apple Pay](payment_method)?
+    - I prefer to use [Google Pay](payment_method)
+    - [Bank transfer](payment_method)
+    - Is [cryptocurrency](payment_method) an option?
+    - I'll be paying with [traveler's checks](payment_method)
+    - Can I use my [company card](payment_method)?
+    - [Wire transfer](payment_method) works best for me
+    - I'd like to pay using [Venmo](payment_method)
+    - [Prepaid card](payment_method) payment
+    - [Gift card](payment_method) if possible
+    - [Mobile payment](payment_method) through my banking app
+    - [Check](payment_method) payment
+    - [Split payment](payment_method) between credit card and cash

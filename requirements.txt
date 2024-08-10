@@ -1,0 +1,6 @@
+rasa==3.6.20
+rasa-sdk==3.6.2
+requests==2.32.3
+streamlit==1.36.0
+streamlit-chat==0.1.1
+streamlit-extras==0.4.6

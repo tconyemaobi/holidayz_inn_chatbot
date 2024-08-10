@@ -1,0 +1,42 @@
+version: "3.1"
+
+stories:
+- story: book room
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_welcome_message
+  - intent: book_room
+  - action: utter_ask_name
+  - intent: provide_name
+    entities:
+      - name
+  - slot_was_set:
+      - name: "Collins Onyemaobi"
+  - action: utter_ask_guest_count
+  - intent: guest_count
+    entities:
+      - guest_count
+  - slot_was_set:
+      - guest_count: "Two"
+  - action: utter_ask_stay_dates  # New step
+  - intent: provide_stay_dates    # New step
+    entities:
+      - check_in
+      - check_out
+  - slot_was_set:
+      - check_in: "2023-07-01"
+      - check_out: "2023-07-05"
+  - action: utter_ask_breakfast
+  - intent: breakfast_preference
+    entities:
+      - breakfast
+  - slot_was_set:
+      - breakfast: true
+  - action: utter_ask_payment_method
+  - intent: payment_method
+    entities:
+      - payment_method
+  - slot_was_set:
+      - payment_method: "Credit Card"
+  - action: action_process_booking

@@ -1,0 +1,87 @@
+version: "3.1"
+
+intents:
+  - start
+  - greet
+  - goodbye
+  - bot_challenge
+  - book_room
+  - provide_name
+  - guest_count
+  - provide_stay_dates
+  - breakfast_preference
+  - payment_method
+
+entities:
+  - name
+  - guest_count
+  - check_in
+  - check_out
+  - breakfast
+  - payment_method
+
+slots:
+  welcomed:
+    type: bool
+    initial_value: false
+    mappings:
+    - type: custom
+  name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: name
+  guest_count:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: guest_count
+  check_in:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: check_in
+  check_out:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: check_out
+  breakfast:
+    type: bool
+    mappings:
+    - type: from_entity
+      entity: breakfast
+  payment_method:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: payment_method
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I assist you today?"
+  utter_goodbye:
+    - text: "Goodbye! Have a great day!"
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+  utter_ask_name:
+    - text: "Can I have your name, please?"
+  utter_ask_guest_count:
+    - text: "How many guests will be staying?"
+  utter_ask_breakfast:
+    - text: "Do you need breakfast included?"
+  utter_ask_stay_dates:
+    - text: "For what dates would you like to book your stay?"
+  utter_ask_payment_method:
+    - text: "What's your preferred payment method?"
+
+
+actions:
+  - action_welcome_message
+  - action_process_booking
+  - action_ask_breakfast
+  - action_ask_payment_method
+
+session_config:
+  session_expiration_time: 10
+  carry_over_slots_to_new_session: true
