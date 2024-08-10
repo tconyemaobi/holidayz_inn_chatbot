@@ -21,7 +21,6 @@ source venv/bin/activate
 ###  Install dependencies
 ```bash
 pip install -r requirements.txt
-pip install streamlit_extras==0.4.6
 ```
 ### Running the Application
 #### 1. Start the RASA server
